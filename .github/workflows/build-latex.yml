@@ -19,20 +19,10 @@ jobs:
         with:
           name: CV
           path: cv_bingqi_shang.pdf
-      - name: Deploy PDF to branch
+      - name: Commit and push PDF to repository
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git fetch --all
-          if git show-ref --quiet refs/remotes/origin/pdf; then
-            git checkout pdf
-          else
-            git checkout --orphan pdf
-            git rm -rf --ignore-unmatch .
-          fi
-          mv cv_bingqi_shang.pdf /tmp/
-          git reset --hard
-          mv /tmp/cv_bingqi_shang.pdf .
           git add cv_bingqi_shang.pdf
-          git commit -m "Update CV PDF" || echo "No changes to commit"
-          git push origin pdf 
+          git commit -m "Update compiled CV PDF" || echo "No changes to commit"
+          git push 
