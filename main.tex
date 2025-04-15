@@ -1,0 +1,125 @@
+\documentclass{resume}
+\usepackage{graphicx, txfonts}
+\newcommand{\heart}{\ensuremath{\varheartsuit}}
+\usepackage{hyperref}
+\usepackage[usenames, dvipsnames]{color, xcolor}
+\usepackage{vwcol}
+\usepackage{latexsym}
+\usepackage{fontawesome5} % For email symbol, add this to preamble
+
+\usepackage{graphicx, calc}
+\newcommand*{\git}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Git.png}}}}
+\newcommand*{\Google}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Google.png}}}}
+\newcommand*{\web}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Web.png}}}}
+\newcommand*{\email}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Mail.png}}}}
+\newcommand*{\phone}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Phone.png}}}}
+
+\usepackage[left=0.75in, top=0.6in, right=0.75in, bottom=0.6in]{geometry}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{Bingqi Shang - Page \thepage\ of \pageref{LastPage}}
+\definecolor{darkblue}{HTML}{02028B}
+\newcounter{pubcounter}
+\setcounter{pubcounter}{0}
+
+\newcommand{\publication}[4]{
+  \refstepcounter{pubcounter}
+  \textbf{[\thepubcounter]} #1. {\color{darkblue}\href{#4}{\textbf{#2}}}. #3.
+  \label{pub:\thepubcounter}
+}
+
+\newcommand{\pubcite}[1]{[\ref{pub:#1}]}
+% \setlength{\itemindent}{-.5in}
+
+\begin{document}
+    % \begin{vwcol}[widths={0.4,0.6}, sep=.8cm, justify=flush,rule=0pt,indent=1em]
+    % \huge{\textbf{Bingqi Shang}}
+
+    % \small
+    % % $\web$ \href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}}
+    % % \hspace{1mm} $\Google$ \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf \underline{Google Scholar}}}
+    % % \hspace{1mm} $\git$ \href{https://github.com/bshang17}{\textcolor{darkblue}{\bf \underline{GitHub}}}
+
+    % \faGlobe\; \href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}}
+    % \hspace{1mm}
+    % \faGraduationCap\; \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf \underline{Google Scholar}}}
+    % \hspace{1mm}
+    % \faGithub\; \href{https://github.com/bshang17}{\textcolor{darkblue}{\bf \underline{GitHub}}}
+
+    % \faEnvelope\,shangbin@egr.msu.edu\hspace{0mm}
+    % $\phone$(872)304-8591
+    % \end{vwcol}
+
+\begin{center}
+    \huge{\textbf{Bingqi Shang}}
+    
+    \vspace{0.2cm}
+    \small
+    \faGlobe\;\href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}} 
+    \hspace{1mm}$|$\hspace{1mm}
+    \faGraduationCap\;\href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf\underline{Google Scholar}}} 
+    \hspace{1mm}$|$\hspace{1mm}
+    \faGithub\;\href{https://github.com/bshang17}{\textcolor{darkblue}{\bf\underline{GitHub}}}
+    \hspace{1mm}$|$\hspace{1mm}
+    \faEnvelope\;shangbin@egr.msu.edu
+    \hspace{1mm}$|$\hspace{1mm}
+    \faPhone\;(872) 304-8591
+\end{center}
+    \input{sec/0_research_interest}
+
+    \input{sec/1_education}
+
+
+    % \input{sec/4_industry_experience}
+    \input{sec/5_research_experience}
+    \input{sec/3_professional_experience}
+
+    \begin{rSection}
+        {Publications}
+        \vspace{-0.5mm}
+
+        % Yihua Zhang has co-authored over $20$ papers in top-tier machine learning and computer vision venues (\texttt{NeurIPS, ICML, ICLR, CVPR, ICCV, ECCV}, \textit{etc.}) and published over 10 first-authored papers. Google scholar citation count stands at 712 (as of Dec. 15, 2024). Below are his publications:
+        \small{\textbf{* indicates an equal contribution}}
+
+        % \vspace{-0.5mm}
+        % $\rhd$ \underline{{\textbf{\large Thrust I. Efficient Machine Learning}}}
+
+        \vspace{-1mm}
+        \publication{Lixu Wang*, \textbf{Bingqi Shang}*, Yi Li, Payal Mohapatra, Wei Dong, Xiao Wang, Qi Zhu}{Split Adaptation for Pre-trained Vision Transformers}{CVPR\textquotesingle2025}{https://arxiv.org/abs/2503.00441}
+        % \vspace{-1mm}
+        
+    \end{rSection}
+
+    \input{sec/2_honors}
+
+    \begin{rSection}{Personal Interests}
+     \small{   
+    \href{https://astro.bingqi-shang.com/}{\textbf{\textcolor{darkblue}{Astrophotography}}} \hfill 2019 - Present
+        }
+    \end{rSection}
+
+\newpage
+    \begin{rSection}{PROFESSIONAL SKILLS}
+
+    \small{
+    \textbf{Programming Languages}: Python, Go, C++, Java, Rust, JavaScript, Latex, HTML, CSS
+    \\ \textbf{Machine Learning Systems}: PyTorch, Transformers, W\&B, OpenCV, Scikit-learn
+    }
+    
+    \end{rSection}
+    % \vspace{-1mm}
+
+    % \begin{rSection}{Tutorials and Invited Talks}
+
+    
+    \vspace*{\fill}
+    \begin{flushleft}
+        Last updated: \today.
+    \end{flushleft}
+\end{document}
