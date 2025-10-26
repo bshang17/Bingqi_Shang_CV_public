@@ -1,13 +1,15 @@
 \documentclass{resume}
 \usepackage{graphicx, txfonts}
 \newcommand{\heart}{\ensuremath{\varheartsuit}}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref} %[hidelinks]
 \usepackage[usenames, dvipsnames]{color, xcolor}
 \usepackage{vwcol}
 \usepackage{latexsym}
 \usepackage{fontawesome5} % For email symbol, add this to preamble
 
 \usepackage{graphicx, calc}
+\definecolor{BS_color}{RGB}{78,42,132}
+
 \newcommand*{\git}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Git.png}}}}
 \newcommand*{\Google}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Google.png}}}}
 \newcommand*{\web}{\vcenter{\hbox{\includegraphics[width=.9em]{icon/Web.png}}}}
@@ -30,11 +32,11 @@
 
 \newcommand{\publication}[4]{
   \refstepcounter{pubcounter}
-  \textbf{[\thepubcounter]} #1. {\color{darkblue}\href{#4}{\textbf{#2}}}. \textit{#3}.
+  \textbf{[\thepubcounter]} #1. {\color{BS_color}\href{#4}{\textbf{#2}}}. \textit{#3}.
   \label{pub:\thepubcounter}
 }
 
-\newcommand{\pubcite}[1]{[{\color{green}\ref{pub:#1}}]}
+\newcommand{\pubcite}[1]{[{\color{BS_color}\ref{pub:#1}}]}
 % \setlength{\itemindent}{-.5in}
 
 \begin{document}
@@ -42,15 +44,15 @@
     % \huge{\textbf{Bingqi Shang}}
 
     % \small
-    % % $\web$ \href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}}
-    % % \hspace{1mm} $\Google$ \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf \underline{Google Scholar}}}
-    % % \hspace{1mm} $\git$ \href{https://github.com/bshang17}{\textcolor{darkblue}{\bf \underline{GitHub}}}
+    % % $\web$ \href{https://bio.bingqi-shang.com/}{\textcolor{BS_color}{\underline{\textbf{Website}}}}
+    % % \hspace{1mm} $\Google$ \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{BS_color}{\bf \underline{Google Scholar}}}
+    % % \hspace{1mm} $\git$ \href{https://github.com/bshang17}{\textcolor{BS_color}{\bf \underline{GitHub}}}
 
-    % \faGlobe\; \href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}}
+    % \faGlobe\; \href{https://bio.bingqi-shang.com/}{\textcolor{BS_color}{\underline{\textbf{Website}}}}
     % \hspace{1mm}
-    % \faGraduationCap\; \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf \underline{Google Scholar}}}
+    % \faGraduationCap\; \href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{BS_color}{\bf \underline{Google Scholar}}}
     % \hspace{1mm}
-    % \faGithub\; \href{https://github.com/bshang17}{\textcolor{darkblue}{\bf \underline{GitHub}}}
+    % \faGithub\; \href{https://github.com/bshang17}{\textcolor{BS_color}{\bf \underline{GitHub}}}
 
     % \faEnvelope\,shangbin@egr.msu.edu\hspace{0mm}
     % $\phone$(872)304-8591
@@ -61,15 +63,14 @@
     
     \vspace{0.2cm}
     \small
-    \faGlobe\;\href{https://bio.bingqi-shang.com/}{\textcolor{darkblue}{\underline{\textbf{Website}}}} 
+    \faGlobe\;\href{https://bio.bingqi-shang.com/}{\textcolor{BS_color}{\underline{\textbf{Website}}}} 
     \hspace{1mm}$|$\hspace{1mm}
-    \faGraduationCap\;\href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{darkblue}{\bf\underline{Google Scholar}}} 
+    \faGraduationCap\;\href{https://scholar.google.com/citations?authuser=3&user=8xedwl0AAAAJ}{\textcolor{BS_color}{\bf\underline{Google Scholar}}} 
     \hspace{1mm}$|$\hspace{1mm}
-    \faGithub\;\href{https://github.com/bshang17}{\textcolor{darkblue}{\bf\underline{GitHub}}}
+    \faGithub\;\href{https://github.com/bshang17}{\textcolor{BS_color}{\bf\underline{GitHub}}}
     \hspace{1mm}$|$\hspace{1mm}
-    \faEnvelope\;bshang@msu.edu
-    \hspace{1mm}$|$\hspace{1mm}
-    \faPhone\;(872) 304-8591
+    \faEnvelope\;\href{mailto:bshang@msu.edu}{\textcolor{BS_color}{\underline{\textbf{bshang@msu.edu}}}}
+
 \end{center}
     \input{sec/0_research_interest}
 
@@ -89,10 +90,16 @@
 
         % \vspace{-0.5mm}
         % $\rhd$ \underline{{\textbf{\large Thrust I. Efficient Machine Learning}}}
-
         \vspace{-1mm}
-        \publication{Lixu Wang*, \textbf{Bingqi Shang}*, Yi Li, Payal Mohapatra, Wei Dong, Xiao Wang, Qi Zhu}{Split Adaptation for Pre-trained Vision Transformers}{CVPR\textquotesingle2025}{https://arxiv.org/abs/2503.00441}
-        % \vspace{-1mm}
+        
+        \publication{\textbf{Bingqi Shang}*, Yiwei Chen*, Yihua Zhang, Bingquan Shen, Sijia Liu}
+        {Forgetting to Forget: Attention Sink as A Gateway for Backdooring LLM Unlearning}
+        {arXiv\textquotesingle2025}
+        {https://arxiv.org/abs/2510.17021}
+        
+        \vspace{-1mm}
+        \publication{Lixu Wang*, \textbf{Bingqi Shang}*, Yi Li, Payal Mohapatra, Wei Dong, Xiao Wang, Qi Zhu}{Split Adaptation for Pre-trained Vision Transformers}{CVPR\textquotesingle2025}{https://openaccess.thecvf.com/content/CVPR2025/papers/Wang_Split_Adaptation_for_Pre-trained_Vision_Transformers_CVPR_2025_paper.pdf}
+
         
     \end{rSection}
 
@@ -102,16 +109,15 @@
 
     \begin{rSection}{Personal Interests}
      \small{   
-    \href{https://astro.bingqi-shang.com/}{\textbf{\textcolor{darkblue}{Astrophotography}}} \hfill 2019 - Present
+    \href{https://bio.bingqi-shang.com/Astrophotography-17facd215b3680e6b096e5f9194c629f}{\textbf{\textcolor{BS_color}{Astrophotography}}} \hfill 2019 - Present
         }
     \end{rSection}
 
-\newpage
     \begin{rSection}{PROFESSIONAL SKILLS}
 
     \small{
-    \textbf{Programming Languages}: Python, Go, C++, Java, Rust, JavaScript, Latex, HTML, CSS
-    \\ \textbf{Machine Learning Systems}: PyTorch, Transformers, W\&B, OpenCV, Scikit-learn
+    \textbf{Programming Languages}: Python, Go, C++, Java, Rust, \LaTeX, HTML, CSS, JavaScript
+    \\ \textbf{Machine Learning Systems}: PyTorch, Transformers, Huggingface, W\&B, OpenCV, Scikit-learn
     }
     
     \end{rSection}
